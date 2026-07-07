@@ -1,0 +1,44 @@
+[
+  {
+    "id": "math-linear-graphs",
+    "subject": "Mathematics",
+    "title": "Linear graphs and equations",
+    "year_levels": ["Year 9", "Year 10", "Year 11"],
+    "summary": "Gradient, y-intercept, and plotting linear relationships."
+  },
+  {
+    "id": "math-probability",
+    "subject": "Mathematics",
+    "title": "Probability and data",
+    "year_levels": ["Year 8", "Year 9", "Year 10"],
+    "summary": "Experimental vs theoretical probability and simple data displays."
+  },
+  {
+    "id": "science-ecosystems",
+    "subject": "Science",
+    "title": "Ecosystems and energy flow",
+    "year_levels": ["Year 8", "Year 9", "Year 10"],
+    "summary": "Food webs, energy transfer, and human impacts on ecosystems."
+  },
+  {
+    "id": "science-chemical-reactions",
+    "subject": "Science",
+    "title": "Chemical reactions",
+    "year_levels": ["Year 9", "Year 10", "Year 11"],
+    "summary": "Reactants, products, conservation of mass, and reaction types."
+  },
+  {
+    "id": "english-text-analysis",
+    "subject": "English",
+    "title": "Text analysis and evidence",
+    "year_levels": ["Year 9", "Year 10", "Year 11", "Year 12"],
+    "summary": "Identifying techniques, quoting evidence, and explaining effect on audience."
+  },
+  {
+    "id": "history-source-analysis",
+    "subject": "History",
+    "title": "Source analysis",
+    "year_levels": ["Year 9", "Year 10", "Year 11"],
+    "summary": "Origin, purpose, context, and reliability of historical sources."
+  }
+]

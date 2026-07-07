@@ -1,0 +1,23 @@
+{
+  "id": "./",
+  "name": "Virtual Science Lab",
+  "short_name": "Science Lab",
+  "description": "PhET simulations with AI explanations for Australian students.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui", "browser"],
+  "orientation": "any",
+  "background_color": "#f8fafc",
+  "theme_color": "#0084ff",
+  "lang": "en-AU",
+  "categories": ["education", "productivity"],
+  "icons": [
+    {
+      "src": "./favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

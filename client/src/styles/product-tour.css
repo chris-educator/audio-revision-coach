@@ -1,0 +1,187 @@
+/* Product tour — theme-safe welcome + step panels (import in index.css) */
+
+.product-tour-welcome-root {
+  position: fixed;
+  inset: 0;
+  z-index: 180;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 1rem;
+}
+
+@media (min-width: 640px) {
+  .product-tour-welcome-root {
+    align-items: center;
+  }
+}
+
+.product-tour-welcome-backdrop {
+  position: absolute;
+  inset: 0;
+  border: none;
+  background: rgb(0 0 0 / 0.55);
+  cursor: pointer;
+}
+
+.product-tour-welcome-panel {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 28rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  padding: 1.5rem;
+  box-shadow: 0 24px 48px rgb(0 0 0 / 0.22);
+}
+
+html[data-theme='dark'] .product-tour-welcome-panel {
+  box-shadow: 0 24px 48px rgb(0 0 0 / 0.45);
+}
+
+.product-tour-welcome-panel__title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  color: var(--color-text);
+}
+
+.product-tour-welcome-panel__body {
+  margin: 0.75rem 0 0;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--color-text-muted);
+}
+
+.product-tour-welcome-panel__actions {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .product-tour-welcome-panel__actions {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}
+
+.product-tour-root {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+}
+
+.product-tour-backdrop {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  background: rgb(0 0 0 / 0.55);
+}
+
+.product-tour-spotlight {
+  pointer-events: none;
+  position: fixed;
+  border-radius: 0.625rem;
+  box-shadow: 0 0 0 9999px rgb(0 0 0 / 0.55);
+  outline: 2px solid var(--color-blue, #2563eb);
+  outline-offset: 0;
+}
+
+.product-tour-panel {
+  pointer-events: auto;
+  position: fixed;
+  z-index: 201;
+  width: min(20rem, calc(100vw - 2rem));
+  max-height: min(70vh, 22rem);
+  overflow: auto;
+  border-radius: 0.75rem;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  padding: 1rem;
+  box-shadow: 0 20px 40px rgb(0 0 0 / 0.24);
+}
+
+html[data-theme='dark'] .product-tour-panel {
+  box-shadow: 0 20px 40px rgb(0 0 0 / 0.5);
+}
+
+.product-tour-panel__step {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.product-tour-panel__title {
+  margin: 0.35rem 0 0;
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+  color: var(--color-text);
+}
+
+.product-tour-panel__body {
+  margin: 0.5rem 0 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+.product-tour-panel__notice {
+  margin: 0.65rem 0 0;
+  border-radius: 0.5rem;
+  border: 1px solid color-mix(in srgb, #fb923c 40%, var(--color-border));
+  background: color-mix(in srgb, #f97316 14%, var(--color-surface-raised));
+  padding: 0.5rem 0.65rem;
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: var(--color-text);
+}
+
+html[data-theme='dark'] .product-tour-panel__notice {
+  border-color: color-mix(in srgb, #fb923c 35%, var(--color-border));
+  background: color-mix(in srgb, #ea580c 20%, var(--color-surface-raised));
+}
+
+.product-tour-panel__actions {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.product-tour-panel__skip {
+  border: none;
+  background: transparent;
+  padding: 0.25rem 0.35rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.product-tour-panel__skip:hover,
+.product-tour-panel__skip:focus-visible {
+  color: var(--color-text);
+}
+
+.product-tour-panel__nav {
+  margin-left: auto;
+  display: flex;
+  gap: 0.5rem;
+}

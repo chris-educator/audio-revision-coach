@@ -1,0 +1,30 @@
+{
+  "name": "virtual-science-lab-client",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Virtual Science Lab — PhET simulations with AI explanations",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@sentry/react": "^9.0.0",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "react-router-dom": "^7.18.1"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "tailwindcss": "^4.3.0",
+    "typescript": "~5.7.3",
+    "vite": "^6.2.0"
+  }
+}

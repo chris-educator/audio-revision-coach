@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Quick Lesson Generator  corpus-grounded lessons from URLs, YouTube, and PDFs">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#09090b"/>
+      <stop offset="55%" stop-color="#18181b"/>
+      <stop offset="100%" stop-color="#09090b"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#0084ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="720" y="180" width="340" height="240" rx="12" fill="#18181b" stroke="#3f3f46"/>
+  <rect x="760" y="220" width="260" height="10" rx="5" fill="#0084ff" opacity="0.7"/>
+  <rect x="760" y="250" width="220" height="10" rx="5" fill="#22c55e" opacity="0.6"/>
+  <rect x="760" y="280" width="180" height="10" rx="5" fill="#0084ff" opacity="0.5"/>
+  <text x="96" y="200" fill="#fafafa" font-family="system-ui, sans-serif" font-size="48" font-weight="800" letter-spacing="-1">Quick Lesson Generator</text>
+  <text x="96" y="280" fill="url(#brand)" font-family="system-ui, sans-serif" font-size="32" font-weight="700">URL · YouTube · PDF ’ lesson</text>
+  <text x="96" y="350" fill="#a1a1aa" font-family="system-ui, sans-serif" font-size="24">Hook, vocabulary, questions &amp; exit ticket</text>
+  <text x="96" y="410" fill="#71717a" font-family="system-ui, sans-serif" font-size="22">quick.appstax.ai · by AppStax</text>
+</svg>

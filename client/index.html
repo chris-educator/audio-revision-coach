@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Virtual Science Lab | EdStack for Students</title>
+    <link rel="icon" href="./favicon.svg?v=3" type="image/svg+xml" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Science Lab" />
+    <link rel="apple-touch-icon" href="./favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      (function () {
+        var KEY = 'virtual-science-lab-theme'
+        var pref = 'system'
+        try {
+          var stored = localStorage.getItem(KEY)
+          if (stored === 'light' || stored === 'dark' || stored === 'system') pref = stored
+        } catch (e) {}
+        var dark =
+          pref === 'dark' ||
+          (pref === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)
+        var theme = dark ? 'dark' : 'light'
+        document.documentElement.dataset.theme = theme
+        document.documentElement.style.colorScheme = theme
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root">
+      <p style="font-family: system-ui, sans-serif; padding: 2rem; color: #334155">
+        Loading Virtual Science Lab…
+      </p>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

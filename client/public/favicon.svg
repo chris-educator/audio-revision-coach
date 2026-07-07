@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="AppStax">
+  <rect width="64" height="64" rx="14" fill="#09090B"/>
+  <rect x="14" y="16" width="36" height="8" rx="4" fill="#0084FF"/>
+  <rect x="14" y="28" width="36" height="8" rx="4" fill="#22C55E"/>
+  <rect x="14" y="40" width="36" height="8" rx="4" fill="#f97316"/>
+</svg>
