@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Privacy Policy — Virtual Science Lab</title>
+    <title>Privacy Policy — Audio Revision Coach</title>
     <style>
       :root { color-scheme: dark; font-family: system-ui, sans-serif; line-height: 1.6; }
       body { margin: 0; background: #09090b; color: #f4f4f5; }
@@ -18,21 +18,44 @@
   <body>
     <main>
       <h1>Privacy Policy</h1>
-      <p class="meta">Virtual Science Lab · AppStax · Last updated: 7 July 2026</p>
+      <p class="meta">Audio Revision Coach · AppStax · Last updated: 7 July 2026</p>
       <p>
-        Virtual Science Lab (<a href="https://lab.appstax.ai">lab.appstax.ai</a>) provides PhET
-        simulations with AI explanations for Australian secondary students.
+        Audio Revision Coach (<a href="https://revise.appstax.ai">revise.appstax.ai</a>) provides
+        flashcard decks and listen-aloud revision scripts for Australian secondary students.
       </p>
       <h2>What you submit</h2>
-      <p>Lab parameter settings, optional observations, and optional account sign-in for EdStack credits.</p>
+      <p>Revision topic choices, optional custom topics, optional Ask the Assistant chat, and account sign-in for EdStack credits.</p>
       <h2>What we store</h2>
       <ul>
-        <li><strong>Lab runs</strong> — cached briefly in server memory for free report export.</li>
-        <li><strong>PhET simulations</strong> — load from phet.colorado.edu in your browser.</li>
+        <li><strong>Generated decks & scripts</strong> — returned to your browser for that session; not stored in an AppStax database.</li>
+        <li>
+          <strong>Revision topics</strong> — sent to Anthropic and/or Google for that request only;
+          not stored on AppStax servers.
+        </li>
+        <li>
+          <strong>Listen mode</strong> — uses your browser text-to-speech locally; audio is not sent to AppStax.
+        </li>
+        <li>
+          <strong>Ask the Assistant</strong> — chat messages are sent to Google for that request only;
+          we do not store chat history on AppStax servers.
+        </li>
         <li><strong>Account</strong> — email and credits via EdStack billing when you sign in.</li>
       </ul>
+      <h2>AI processing</h2>
+      <p>
+        Deck and script generation are sent to <strong>Anthropic</strong> (primary) and/or
+        <strong>Google</strong> (Ask the Assistant help, and fallback where configured). Providers process
+        data under their own terms. We do not use your content to train AppStax models.
+      </p>
       <h2>Contact</h2>
-      <p><a href="mailto:apps@appstax.ai">apps@appstax.ai</a></p>
+      <p>
+        <a href="mailto:apps@appstax.ai">apps@appstax.ai</a> ·
+        <a href="https://appstax.ai">appstax.ai</a>
+      </p>
+      <p class="meta">
+        See also: <a href="/terms.html">Terms of Service</a> ·
+        <a href="/teacher-data.html">Student Data</a>
+      </p>
     </main>
   </body>
 </html>

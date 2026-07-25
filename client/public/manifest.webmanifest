@@ -1,8 +1,8 @@
 {
   "id": "./",
-  "name": "Virtual Science Lab",
-  "short_name": "Science Lab",
-  "description": "PhET simulations with AI explanations for Australian students.",
+  "name": "Audio Revision Coach",
+  "short_name": "Revision Coach",
+  "description": "Flashcard decks and listen-aloud revision scripts for Australian secondary students.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

@@ -9,9 +9,10 @@ from typing import Literal
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, Response
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
+from starlette.middleware.base import BaseHTTPMiddleware
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
@@ -30,7 +31,12 @@ from server.edstack_auth_routes import (  # noqa: E402
 from server.rate_limit import enforce_rate_limit  # noqa: E402
 from server.sentry_setup import init_sentry  # noqa: E402
 from src.app_assistant import chat_with_assistant  # noqa: E402
-from src.config import is_google_api_key_configured  # noqa: E402
+from src.config import (  # noqa: E402
+    MAX_ASSISTANT_MESSAGE_CHARS,
+    MAX_ASSISTANT_MESSAGES,
+    MAX_REQUEST_BYTES,
+    is_google_api_key_configured,
+)
 from src.credits import credits_for_deck, credits_for_script  # noqa: E402
 from src.llm_config import (  # noqa: E402
     get_llm_model,
@@ -48,6 +54,35 @@ SCRIPT_USER_ERROR = "Revision script generation failed. Try again in a moment."
 ASSISTANT_USER_ERROR = "The Assistant could not respond. Try again in a moment."
 
 app = FastAPI(title="Audio Revision Coach API")
+
+
+class SecurityHeadersMiddleware(BaseHTTPMiddleware):
+    async def dispatch(self, request: Request, call_next):
+        response = await call_next(request)
+        response.headers["X-Content-Type-Options"] = "nosniff"
+        response.headers["X-Frame-Options"] = "DENY"
+        response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
+        response.headers["Permissions-Policy"] = "camera=(), microphone=(), geolocation=()"
+        if billing.cookie_secure():
+            response.headers["Strict-Transport-Security"] = (
+                "max-age=31536000; includeSubDomains"
+            )
+        return response
+
+
+app.add_middleware(SecurityHeadersMiddleware)
+
+
+@app.middleware("http")
+async def _limit_request_body(request: Request, call_next):
+    content_length = request.headers.get("content-length")
+    if content_length:
+        try:
+            if int(content_length) > MAX_REQUEST_BYTES:
+                return Response(status_code=413, content="Request body too large")
+        except ValueError:
+            pass
+    return await call_next(request)
 
 
 @app.on_event("startup")
@@ -88,11 +123,14 @@ class RevisionRequest(BaseModel):
 
 class AssistantChatMessage(BaseModel):
     role: Literal["user", "assistant"]
-    content: str
+    content: str = Field(min_length=1, max_length=MAX_ASSISTANT_MESSAGE_CHARS)
 
 
 class AssistantChatRequest(BaseModel):
-    messages: list[AssistantChatMessage]
+    messages: list[AssistantChatMessage] = Field(
+        min_length=1,
+        max_length=MAX_ASSISTANT_MESSAGES,
+    )
 
 
 class AssistantChatResponse(BaseModel):

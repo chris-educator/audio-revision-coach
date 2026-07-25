@@ -2,8 +2,6 @@
 
 from __future__ import annotations
 
-import os
-
 from google import genai
 from google.genai import types
 
@@ -12,6 +10,7 @@ from src.config import (
     GEMINI_MODEL,
     MAX_ASSISTANT_MESSAGE_CHARS,
     MAX_ASSISTANT_MESSAGES,
+    get_google_api_key,
 )
 from src.gemini_safety import classroom_gemini_safety_settings
 
@@ -50,7 +49,7 @@ def chat_with_assistant(
     *,
     model: str = GEMINI_MODEL,
 ) -> str:
-    api_key = os.getenv("GOOGLE_API_KEY", "").strip()
+    api_key = get_google_api_key()
     if not api_key:
         raise RuntimeError("GOOGLE_API_KEY is not configured on the server.")
 

@@ -20,11 +20,17 @@ def rate_limiting_enabled() -> bool:
 
 
 def _client_ip(request: Request) -> str:
+    cf = request.headers.get("cf-connecting-ip", "").strip()
+    if cf:
+        return cf
+    real_ip = request.headers.get("x-real-ip", "").strip()
+    if real_ip:
+        return real_ip
     forwarded = request.headers.get("x-forwarded-for", "")
     if forwarded:
-        first = forwarded.split(",")[0].strip()
-        if first:
-            return first
+        hops = [hop.strip() for hop in forwarded.split(",") if hop.strip()]
+        if hops:
+            return hops[-1]
     client = request.client
     return client.host if client else "unknown"
 

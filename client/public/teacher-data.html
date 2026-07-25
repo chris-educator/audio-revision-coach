@@ -3,25 +3,76 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Student Data — Virtual Science Lab</title>
+    <title>Student Data Handling — Audio Revision Coach</title>
     <style>
       :root { color-scheme: dark; font-family: system-ui, sans-serif; line-height: 1.6; }
       body { margin: 0; background: #09090b; color: #f4f4f5; }
       main { max-width: 42rem; margin: 0 auto; padding: 2rem 1.25rem 3rem; }
       h1 { font-size: 1.75rem; }
       p.meta { color: #a1a1aa; }
+      h2 { font-size: 1.1rem; margin-top: 2rem; }
       a { color: #0084ff; }
+      table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+      th, td { border: 1px solid #3f3f46; padding: 0.5rem 0.65rem; text-align: left; vertical-align: top; }
+      th { background: #18181b; }
+      ul { padding-left: 1.25rem; }
     </style>
   </head>
   <body>
     <main>
       <h1>Student Data Handling</h1>
-      <p class="meta">Virtual Science Lab · Last updated: 7 July 2026</p>
+      <p class="meta">Audio Revision Coach · AppStax · For schools and parents · Last updated: 7 July 2026</p>
       <p>
-        Lab parameter settings and observations are sent to AI services for explanations and cached
-        briefly for report export. PhET simulations load from phet.colorado.edu in your browser.
+        Revision topics and generated decks/scripts are processed per request and are not retained on
+        AppStax servers. Listen mode uses browser text-to-speech locally. Contact
+        <a href="mailto:apps@appstax.ai">apps@appstax.ai</a> for contractual questions.
       </p>
-      <p>Parents may purchase EdStack credits on a student account — see <a href="/privacy.html">Privacy Policy</a>.</p>
+      <h2>Data inventory</h2>
+      <table>
+        <thead>
+          <tr><th>Data</th><th>Where stored</th><th>Retention</th><th>Who can access</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Generated decks & scripts</td>
+            <td>Browser session for display</td>
+            <td>Until cleared by user or tab closed</td>
+            <td>Student on device</td>
+          </tr>
+          <tr>
+            <td>Revision topic requests</td>
+            <td>Processed by AI services per request</td>
+            <td>Not in AppStax DB</td>
+            <td>Student; Anthropic/Google under their policies</td>
+          </tr>
+          <tr>
+            <td>Listen mode (TTS)</td>
+            <td>Browser only — no server audio</td>
+            <td>Not sent to AppStax</td>
+            <td>Student on device</td>
+          </tr>
+          <tr>
+            <td>Assistant chat (optional)</td>
+            <td>Processed by Google per message; browser session for display</td>
+            <td>Not in AppStax DB</td>
+            <td>Student; Google under its policies</td>
+          </tr>
+          <tr>
+            <td>Student account (when billing on)</td>
+            <td>EdStack billing service</td>
+            <td>Account lifetime</td>
+            <td>User; AppStax for billing support</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2>Sub-processors</h2>
+      <p><strong>Anthropic</strong> — flashcard deck and listen-aloud script generation.</p>
+      <p><strong>Google</strong> — optional Ask the Assistant help chat, and generate fallback where configured.</p>
+      <p><strong>EdStack billing</strong> — accounts and credits when enabled.</p>
+      <p class="meta">
+        See also: <a href="/privacy.html">Privacy Policy</a> ·
+        <a href="/terms.html">Terms of Service</a>
+      </p>
     </main>
   </body>
 </html>

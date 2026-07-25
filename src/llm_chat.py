@@ -124,14 +124,26 @@ def generate_text(
     operation: str = "",
     temperature: float = 0.3,
 ) -> tuple[str, LlmUsage | None]:
-    if get_llm_provider() == "anthropic":
-        return _call_anthropic(
-            system_instruction=system_instruction,
-            user_content=user_content,
-            max_output_tokens=max_output_tokens,
-            operation=operation,
-            temperature=temperature,
-        )
+    if get_llm_provider() == "anthropic" and get_anthropic_api_key():
+        try:
+            return _call_anthropic(
+                system_instruction=system_instruction,
+                user_content=user_content,
+                max_output_tokens=max_output_tokens,
+                operation=operation,
+                temperature=temperature,
+            )
+        except Exception:
+            if get_google_api_key():
+                return _call_gemini(
+                    system_instruction=system_instruction,
+                    user_content=user_content,
+                    max_output_tokens=max_output_tokens,
+                    operation=operation,
+                    temperature=temperature,
+                    json_mode=False,
+                )
+            raise
     return _call_gemini(
         system_instruction=system_instruction,
         user_content=user_content,
@@ -150,14 +162,26 @@ def generate_json_text(
     operation: str = "",
     temperature: float = 0.2,
 ) -> tuple[str, LlmUsage | None]:
-    if get_llm_provider() == "anthropic":
-        return _call_anthropic(
-            system_instruction=system_instruction,
-            user_content=user_content,
-            max_output_tokens=max_output_tokens,
-            operation=operation,
-            temperature=temperature,
-        )
+    if get_llm_provider() == "anthropic" and get_anthropic_api_key():
+        try:
+            return _call_anthropic(
+                system_instruction=system_instruction,
+                user_content=user_content,
+                max_output_tokens=max_output_tokens,
+                operation=operation,
+                temperature=temperature,
+            )
+        except Exception:
+            if get_google_api_key():
+                return _call_gemini(
+                    system_instruction=system_instruction,
+                    user_content=user_content,
+                    max_output_tokens=max_output_tokens,
+                    operation=operation,
+                    temperature=temperature,
+                    json_mode=True,
+                )
+            raise
     return _call_gemini(
         system_instruction=system_instruction,
         user_content=user_content,

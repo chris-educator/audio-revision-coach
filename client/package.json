@@ -1,8 +1,8 @@
 {
-  "name": "virtual-science-lab-client",
+  "name": "audio-revision-coach-client",
   "private": true,
   "version": "1.0.0",
-  "description": "Virtual Science Lab — PhET simulations with AI explanations",
+  "description": "Audio Revision Coach — flashcard decks and listen-aloud revision scripts",
   "type": "module",
   "scripts": {
     "dev": "vite",

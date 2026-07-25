@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lab.appstax.ai/sitemap.xml
+Sitemap: https://revise.appstax.ai/sitemap.xml
