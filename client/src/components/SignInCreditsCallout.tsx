@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { FREE_SIGNUP_CREDITS } from '../constants/branding'
+import { SIGN_IN_CREDITS_CALLOUT_TEXT } from '../constants/branding'
 import { ROUTE_LOGIN } from '../constants/routes'
 import { useAuth } from '../context/AuthContext'
 
@@ -63,12 +63,12 @@ export function SignInCreditsCallout({
           <>
             <Link to={ROUTE_LOGIN} className="sign-in-credits-callout__link">
               Sign in
-            </Link>{' '}
-            to use practice credits — sign up includes {FREE_SIGNUP_CREDITS} free credits to try any
-            credit-based EdStack app.
+            </Link>
+            {' — '}
+            {SIGN_IN_CREDITS_CALLOUT_TEXT}
           </>
         ) : (
-          `Sign in to use practice credits — sign up includes ${FREE_SIGNUP_CREDITS} free credits to try any credit-based EdStack app.`
+          SIGN_IN_CREDITS_CALLOUT_TEXT
         )}
       </div>
     </div>

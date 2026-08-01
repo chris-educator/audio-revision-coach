@@ -1,6 +1,10 @@
 /** Must match edstack-billing FREE_SIGNUP_CREDITS. */
 export const FREE_SIGNUP_CREDITS = 20
 
+
+/** Unsigned SignInCreditsCallout body (login banner + home when signed out). */
+export const SIGN_IN_CREDITS_CALLOUT_TEXT = `Sign up includes ${FREE_SIGNUP_CREDITS} free credits to use across all EdStack apps.`
+
 export const APPSTAX_HOME_URL = 'https://appstax.ai'
 export const EDSTACK_CREDITS_URL = 'https://edstack.appstax.ai/credits'
 export const EDSTACK_HOME_URL = 'https://edstack.appstax.ai'
