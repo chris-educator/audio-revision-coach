@@ -48,24 +48,24 @@ export function Footer({ extra }: FooterProps) {
         <p className="mx-auto mt-1.5 max-w-2xl text-center text-[11px] leading-relaxed text-[#a1a1aa]">
           {APP_PRIVACY_BLURB}
         </p>
-        <p className="mx-auto mt-1 text-center text-[11px] text-[#71717a]">
+        <p className="mx-auto mt-1 text-center text-[11px] text-[#a1a1aa]">
           <a
             href="/privacy.html"
-            className="text-[#a1a1aa] underline-offset-2 hover:text-[#fafafa] hover:underline"
+            className="text-[#d4d4d8] underline-offset-2 hover:text-[#fafafa] hover:underline"
           >
             Privacy Policy
           </a>
           <span aria-hidden="true"> · </span>
           <a
             href="/terms.html"
-            className="text-[#a1a1aa] underline-offset-2 hover:text-[#fafafa] hover:underline"
+            className="text-[#d4d4d8] underline-offset-2 hover:text-[#fafafa] hover:underline"
           >
             Terms of Service
           </a>
           <span aria-hidden="true"> · </span>
           <a
             href="/teacher-data.html"
-            className="text-[#a1a1aa] underline-offset-2 hover:text-[#fafafa] hover:underline"
+            className="text-[#d4d4d8] underline-offset-2 hover:text-[#fafafa] hover:underline"
           >
             School Data
           </a>
