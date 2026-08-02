@@ -31,7 +31,7 @@ export function Layout({ children, apiReady, creditsCallout }: LayoutProps) {
             <AskAssistant
               apiReady={apiReady}
               subtitle="Help with adaptive practice, topic heatmap, marking feedback, and credits."
-              welcomeMessage="Hi — I'm Ask the Assistant. Ask about General Mathematics topics, adaptive targeting, or how marking works."
+              welcomeMessage="Hi — I'm Ask Ed the Assistant. Ask about General Mathematics topics, adaptive targeting, or how marking works."
               inputPlaceholder="e.g. How does the topic heatmap choose my next question?"
             />
           }
@@ -51,10 +51,10 @@ export function Layout({ children, apiReady, creditsCallout }: LayoutProps) {
           <AppTitle />
           <p className="ui-header__lead max-w-full text-sm leading-relaxed text-text-muted">
             {APP_TAGLINE}{' '}
-            <span className="ui-header__ask-text">Ask the Assistant</span>
+            <span className="ui-header__ask-text">Ask Ed the Assistant</span>
             <span aria-hidden="true"> — </span>
             AI-powered agents built-in for clever help, deep reasoning, and fast responses — use{' '}
-            <span className="ui-header__ask-text">Ask</span> in the top bar.
+            <span className="ui-header__ask-text">Ask Ed</span> in the top bar.
           </p>
         </div>
       </header>

@@ -15,7 +15,7 @@ export function HowToUseGuide() {
         </h2>
         <p className="app-how-to-guide__lead">
           Exam revision with flashcards and listen-aloud scripts. Use{' '}
-          <strong className="font-semibold text-text">Ask</strong> in the top bar for help.
+          <strong className="font-semibold text-text">Ask Ed</strong> in the top bar for help.
         </p>
       </div>
 

@@ -55,7 +55,7 @@ export function AskAssistant({
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        aria-label="Ask"
+        aria-label="Ask Ed"
         aria-expanded={open}
         aria-haspopup="dialog"
         className={[
@@ -64,7 +64,7 @@ export function AskAssistant({
         ].join(' ')}
       >
         <AskChatIcon className="h-4 w-4 shrink-0" />
-        <span className="site-top-bar__ask-btn-label hidden sm:inline">Ask</span>
+        <span className="site-top-bar__ask-btn-label hidden sm:inline">Ask Ed</span>
       </button>
 
       {open && (
@@ -72,25 +72,25 @@ export function AskAssistant({
           <button
             type="button"
             tabIndex={-1}
-            aria-label="Close Assistant"
+            aria-label="Close Ask Ed"
             className={ASK_ASSISTANT_BACKDROP_CLASS}
             onClick={() => setOpen(false)}
           />
           <div
             role="dialog"
             aria-modal="true"
-            aria-label="Ask the Assistant"
+            aria-label="Ask Ed the Assistant"
             className={ASK_ASSISTANT_PANEL_CLASS}
           >
             <div className="flex shrink-0 items-start justify-between gap-2 border-b border-border px-3 py-3 sm:px-4">
               <div className="min-w-0 flex-1">
-                <h3 className="font-heading text-sm font-semibold text-text">Ask the Assistant</h3>
+                <h3 className="font-heading text-sm font-semibold text-text">Ask Ed the Assistant</h3>
                 <p className="text-xs leading-snug text-text-muted">{subtitle}</p>
               </div>
               <button
                 type="button"
                 onClick={() => setOpen(false)}
-                aria-label="Close assistant"
+                aria-label="Close Ask Ed"
                 className="rounded-md p-1 text-text-muted transition-colors hover:bg-surface-raised hover:text-text"
               >
                 <CloseIcon className="h-5 w-5" />
