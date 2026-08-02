@@ -1503,6 +1503,10 @@ html[data-theme='dark'] .app-how-to-guide__step {
 }
 
 @media (max-width: 639px) {
+  .site-top-bar {
+    --site-top-bar-control-height: 2.5rem;
+  }
+
   /*
     Logo + tools on one row. Text labels hidden; Ask = chat icon,
     Credits = "cr", Sign = key, Share = existing icon. Equal flex slots
@@ -1531,7 +1535,7 @@ html[data-theme='dark'] .app-how-to-guide__step {
     flex-wrap: nowrap !important;
     align-items: stretch !important;
     justify-content: stretch !important;
-    gap: 0.375rem !important;
+    gap: 0.5rem !important;
     flex: 1 1 auto !important;
     width: auto !important;
     min-width: 0 !important;
@@ -1554,7 +1558,7 @@ html[data-theme='dark'] .app-how-to-guide__step {
   .site-top-bar__actions > .site-top-bar__share,
   .site-top-bar__actions > .site-top-bar__theme {
     flex: 1 1 0 !important;
-    min-width: 0 !important;
+    min-width: 2.75rem !important;
     max-width: none !important;
     order: unset !important;
   }
@@ -1575,7 +1579,7 @@ html[data-theme='dark'] .app-how-to-guide__step {
   .site-top-bar__actions > .site-top-bar__action {
     width: 100%;
     justify-content: center;
-    padding-inline: 0.25rem;
+    padding-inline: 0.5rem;
     gap: 0;
   }
 
