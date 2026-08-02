@@ -59,6 +59,14 @@
         document.documentElement.style.colorScheme = theme
       })()
     </script>
+      <script>
+      (function () {
+        try {
+          if ('scrollRestoration' in history) history.scrollRestoration = 'manual'
+        } catch (e) {}
+        window.scrollTo(0, 0)
+      })()
+    </script>
   </head>
   <body>
     <div id="root">

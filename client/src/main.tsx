@@ -8,7 +8,9 @@ import { initSentry } from './monitoring/sentry'
 import { BROWSER_TAB_TITLE } from './constants/branding'
 import './index.css'
 import { registerServiceWorker } from './utils/registerServiceWorker'
+import { initReloadScrollTop } from './utils/reloadScrollTop'
 
+initReloadScrollTop()
 initSentry()
 
 document.title = BROWSER_TAB_TITLE
