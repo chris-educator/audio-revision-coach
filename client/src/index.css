@@ -1418,9 +1418,7 @@ html[data-theme='dark'] .app-how-to-guide__step {
       transform 0.15s ease;
   }
 
-  .share-menu:hover .share-menu__popover,
-  .share-menu--open .share-menu__popover,
-  .share-menu:focus-within .share-menu__popover {
+  .share-menu--open .share-menu__popover {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;

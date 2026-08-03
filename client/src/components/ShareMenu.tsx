@@ -1,4 +1,11 @@
-import { useCallback, useMemo, useRef, useState, type ReactNode } from 'react'
+import {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type ReactNode,
+} from 'react'
 import {
   FacebookIcon,
   InstagramIcon,
@@ -110,7 +117,7 @@ export function ShareMenu({
   className = 'share-menu site-top-bar__share',
 }: ShareMenuProps) {
   const [open, setOpen] = useState(false)
-  const leaveTimer = useRef<number | undefined>(undefined)
+  const rootRef = useRef<HTMLDivElement>(null)
   const shareUrl = useMemo(() => getShareUrl(), [])
   const copyLink = useCallback(async () => {
     try {
@@ -124,29 +131,29 @@ export function ShareMenu({
     [shareUrl, copyLink],
   )
 
-  const handleOpen = useCallback(() => {
-    if (leaveTimer.current !== undefined) {
-      window.clearTimeout(leaveTimer.current)
-      leaveTimer.current = undefined
-    }
-    setOpen(true)
-  }, [])
+  useEffect(() => {
+    if (!open) return
 
-  const handleClose = useCallback(() => {
-    leaveTimer.current = window.setTimeout(() => setOpen(false), 120)
-  }, [])
+    const onPointerDown = (event: PointerEvent) => {
+      if (rootRef.current?.contains(event.target as Node)) return
+      setOpen(false)
+    }
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setOpen(false)
+    }
+
+    document.addEventListener('pointerdown', onPointerDown)
+    document.addEventListener('keydown', onKeyDown)
+    return () => {
+      document.removeEventListener('pointerdown', onPointerDown)
+      document.removeEventListener('keydown', onKeyDown)
+    }
+  }, [open])
 
   return (
     <div
+      ref={rootRef}
       className={[className, open ? 'share-menu--open' : ''].join(' ')}
-      onMouseEnter={handleOpen}
-      onMouseLeave={handleClose}
-      onFocus={handleOpen}
-      onBlur={(event) => {
-        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
-          setOpen(false)
-        }
-      }}
     >
       <button
         type="button"
@@ -169,7 +176,10 @@ export function ShareMenu({
             rel="noopener noreferrer"
             aria-label={item.ariaLabel}
             title={item.ariaLabel}
-            onClick={() => item.onNavigate?.()}
+            onClick={() => {
+              item.onNavigate?.()
+              setOpen(false)
+            }}
           >
             {item.icon}
           </a>
